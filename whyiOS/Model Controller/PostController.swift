@@ -25,7 +25,7 @@ class PostController {
             }
             do{
                 let jsonDecoder = JSONDecoder()
-                guard let data = data else {print("shit data");completion(false); return}
+                guard let data = data else {completion(false); return}
                 let postsDictionary = try jsonDecoder.decode([String : Post].self, from: data)
                 let posts = postsDictionary.compactMap({$0.value})
                 self.posts = posts

@@ -14,9 +14,9 @@ protocol PostTableViewCellDelegate: class{
 
 class PostTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var nameTextLabel: UILabel!
-    @IBOutlet weak var reasonTextLabel: UILabel!
-    @IBOutlet weak var cohortTextLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var reasonLabel: UILabel!
+    @IBOutlet weak var cohortLabel: UILabel!
     
     var post: Post?{
         didSet{
@@ -28,10 +28,10 @@ class PostTableViewCell: UITableViewCell {
     
     func updateView(){
         guard let post = post else {return}
-        nameTextLabel.text = post.name
-        reasonTextLabel.text = post.reason
-        cohortTextLabel.text = post.cohort
-        delegate?.updateView()
+        nameLabel.text = post.name
+        reasonLabel.text = post.reason
+        cohortLabel.text = post.cohort
+//        delegate?.updateView()
     }
     
     

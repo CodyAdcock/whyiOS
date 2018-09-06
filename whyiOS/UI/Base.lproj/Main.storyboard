@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="121" id="LoW-Tm-c54">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="121" id="LoW-Tm-c54" customClass="PostTableViewCell" customModule="whyiOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="121"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LoW-Tm-c54" id="HUH-bO-s49" customClass="PostTableViewCell" customModule="whyiOS" customModuleProvider="target">
@@ -57,19 +57,21 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="K44-0E-EUc" secondAttribute="bottom" constant="6" id="BHh-14-1bx"/>
                                         <constraint firstItem="K44-0E-EUc" firstAttribute="width" secondItem="HUH-bO-s49" secondAttribute="width" multiplier="0.9" id="bOH-FN-0h5"/>
+                                        <constraint firstItem="K44-0E-EUc" firstAttribute="top" secondItem="HUH-bO-s49" secondAttribute="top" constant="6" id="ruM-AK-1aP"/>
                                         <constraint firstItem="K44-0E-EUc" firstAttribute="centerY" secondItem="HUH-bO-s49" secondAttribute="centerY" id="sjd-6L-hTE"/>
                                     </constraints>
-                                    <connections>
-                                        <outlet property="cohortTextLabel" destination="HGG-58-tRg" id="SC1-jK-6hb"/>
-                                        <outlet property="nameTextLabel" destination="z3e-tE-cso" id="lDX-ef-hsH"/>
-                                        <outlet property="reasonTextLabel" destination="oXd-fk-ZMu" id="bCT-CQ-3Vc"/>
-                                    </connections>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="K44-0E-EUc" firstAttribute="centerX" secondItem="LoW-Tm-c54" secondAttribute="centerX" id="n1s-zm-0xd"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="cohortLabel" destination="HGG-58-tRg" id="bmS-I0-aeP"/>
+                                    <outlet property="nameLabel" destination="z3e-tE-cso" id="3MX-de-AXb"/>
+                                    <outlet property="reasonLabel" destination="oXd-fk-ZMu" id="Xy6-AT-w6b"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -8,9 +8,16 @@
 
 import Foundation
 
-struct Post: Codable {
+class Post: Codable {
     let name: String
     let reason: String
-    let uuid: String = UUID().uuidString
+    var uuid: String = UUID().uuidString
     let cohort: String = "iOS21"
+    
+    init(name: String, reason: String, uuid: String = UUID().uuidString) {
+        self.name = name
+        self.reason = reason
+        self.uuid = uuid
+        
+    }
 }

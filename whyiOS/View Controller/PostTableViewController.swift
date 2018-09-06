@@ -40,7 +40,7 @@ class PostTableViewController: UITableViewController, PostTableViewCellDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as? PostTableViewCell
         let post = postController.posts[indexPath.row]
         
-        cell?.delegate = self
+//        cell?.delegate = self
         cell?.post = post
         
         return cell ?? UITableViewCell()
