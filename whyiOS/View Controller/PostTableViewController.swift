@@ -17,8 +17,10 @@ class PostTableViewController: UITableViewController, PostTableViewCellDelegate{
     
     let postController = PostController()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = 100
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         loadFetchChat()
         
@@ -40,7 +42,6 @@ class PostTableViewController: UITableViewController, PostTableViewCellDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as? PostTableViewCell
         let post = postController.posts[indexPath.row]
         
-//        cell?.delegate = self
         cell?.post = post
         
         return cell ?? UITableViewCell()

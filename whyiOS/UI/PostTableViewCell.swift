@@ -31,6 +31,7 @@ class PostTableViewCell: UITableViewCell {
         nameLabel.text = post.name
         reasonLabel.text = post.reason
         cohortLabel.text = post.cohort
+        
 //        delegate?.updateView()
     }
     
