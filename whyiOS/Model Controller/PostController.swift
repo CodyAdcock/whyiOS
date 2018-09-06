@@ -39,19 +39,21 @@ class PostController {
     
     func putPost(name: String, reason: String, completion: @escaping (_ success: Bool) -> Void){
         let post = Post(name: name, reason: reason)
-        guard let url = baseURL?.appendingPathExtension("json") else {fatalError("bad baseURL")}
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "PUT"
+        guard let url = baseURL else {fatalError("bad baseURL")}
+        let builtURL = url.appendingPathComponent(post.uuid).appendingPathExtension("json")
+        var request = URLRequest(url: builtURL)
         
         let jsonEncoder = JSONEncoder()
         do{
             let data = try jsonEncoder.encode(post)
+            request.httpMethod = "PUT"
             request.httpBody = data
         }catch let error {
             print("🤮 Error putting with data task: \(error) \(error.localizedDescription)")
             completion(false); return
         }
+        
+        
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
